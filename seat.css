@@ -1,0 +1,341 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html,body
+{
+    width:100%;
+    height:100%
+}
+
+
+body
+{
+    background-color: rgb(204, 204, 230);
+    color: grey;
+    font-family: sans-serif;
+}
+
+
+
+
+.seat
+{
+   height: 25px;
+    width: 30px;
+    border: 1px solid #bdbdbd;
+    border-radius: 2px 2px 4px 4px;
+    margin: 10px;
+    margin-bottom: 0.8rem;
+    position: relative;
+    cursor: pointer;
+    background-color: #fff;
+    transition: 0.3s ease background-color;
+}
+
+.seat::after
+{
+    content: "";
+    height: 23px;
+    width: 20px;
+    border: 1px solid #bdbdbd;
+    position: absolute;
+    left: 50%;
+    top: 29%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 2px 2px;
+    transition: 0.3s ease background-color;
+}
+
+
+.seat-container .seat:hover
+{
+    background-color: #d4d0d0;
+}
+
+.seat-container  .seat:hover::after
+{
+    background-color: #e0d9d9;
+}
+
+
+
+
+
+
+.selected
+{
+    background-color: green;
+}
+
+
+.occupied
+{
+  background-color: gray;
+}
+
+
+.selected::after
+{
+    background-color: green;
+}
+
+
+.occupied::after
+{
+  background-color: gray;
+}
+
+
+.header
+{
+    display: flex;
+    background-color: gainsboro;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 0;
+    position: fixed;
+    box-sizing: border-box;
+    top:0;
+    width: 100%;
+    z-index: 100;
+}
+
+
+.heading
+{
+    margin-right: 30px;
+}
+
+.seat-type
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+.seat-type .seat 
+{
+    margin:0;
+}
+
+
+.main-cont
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;  
+    padding-top:55px; 
+}
+
+
+.left 
+{
+     /* display: flex;
+    flex-direction: column; 
+    flex: 3;
+    min-height: 100vh;
+    background-color: rgb(235, 246, 247);
+    height: calc(100vh - 55px);
+    position: sticky;
+    top: 55px;
+    left: 0;
+    width: 75%;
+    overflow: hidden; */
+
+    width: 75%;
+    height: calc(100vh - 55px);
+    position: sticky;
+    top:  55px;
+    background-color: rgb(235, 246, 247);
+
+}
+
+.seat-container
+{
+     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 10px;
+    max-width: 350px;
+    margin: 30px auto;
+}
+
+
+.screen
+{
+    text-align: center;
+    background-color: rgb(90, 87, 87);
+    color:  rgb(194, 187, 187);
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 10px;
+    width:  50%;
+}
+
+
+.right
+{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: calc(100vh - 55px);
+    overflow-y: auto;
+    padding: 25px;
+    gap: 20px;
+    background-color: gainsboro;
+    
+}
+
+
+.movie-type
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.movie-name 
+{
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+#moviename
+{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.movie-price
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+
+#price
+{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+
+.movie-type select
+{
+    width:  200px;
+    height: 30px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: gray;
+}
+
+
+
+.seat-price
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+.seat-control
+{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.seat-control button
+{
+    width:  100%;
+    max-width: 200px;
+    height: 40px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#continue 
+{
+    background-color: green;
+}
+
+#cancel
+{
+    background-color: red;
+}
+
+
+.booking-date
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+
+.selected-seats
+{
+  display:  grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+
+
+
+.selected-seat
+{
+    width: 50px;
+    height: 20px;
+    margin: 10px;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid green;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+
+#date
+{
+    color: rgb(43, 43, 43);
+}
+

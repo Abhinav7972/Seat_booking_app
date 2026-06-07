@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="seat.css">
+    <title>Seat Booking App</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="seat-type">
+            <div class="legend-item">
+                <div class="seat available"></div>
+                <span>Available</span>
+            </div>
+            
+            <div class="legend-item">
+                <div class="seat selected"></div>
+                <span>Selected</span>
+            </div>
+            
+            <div class="legend-item">
+                <div class="seat occupied"></div>
+                <span>Occupied</span>
+            </div>
+            </div>
+            <div class="heading">
+            <h1>Seat Booking App</h1>
+            </div>
+        </div>
+
+        <div class="main-cont">
+        <div class="left">
+            <div class="screen">Screen</div>
+            <div class="seat-container">
+               <div class="seat occupied"></div>
+               <div class="seat"></div>
+               <div class="seat"></div>
+               <div class="seat"></div>
+               <div class="seat"></div>
+               <div class="seat"></div>
+               <div class="seat"></div>
+               <div class="seat"></div>
+               <div class="seat"></div>
+               <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="movie-type">
+                <p>Select your movie :</p>
+                <select name="movie" id="movie">
+                    <option value="flash" data-price="7">flash $7</option>
+                    <option value="spiderman" data-price="10">spiderman  $10</option>
+                    <option value="captain america" data-price="20">Captain america $20</option>
+                </select>
+            </div>
+            <div class="movie-name">
+                <p>Movie Name :</p>
+                <p id="moviename">movie</p>
+            </div>
+            <div class="movie-price">
+                <p>Movie Price :</p>
+                <p id="price">$10</p>
+            </div>
+            <div class="booking-date">
+                <p>Date</p>
+                <p id="date">07 june 2026</p>
+            </div>
+            <hr>
+            <div class="selected-seats">
+                <p>Selected Seats </p>
+                <p class="selected-seat">10</p>
+                <p class="selected-seat">10</p>  
+            </div>
+            <hr>
+            <div class="seat-price">
+                <p id="seat-number">0</p>
+                <p>Seats(S)</p>
+                <p id="seat-price">$0</p>
+            </div>
+            <div class="seat-control">
+                <button id="continue">Continue</button>
+                <button id="cancel">Cancel</button>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <script src="./seat.js"></script>
+</body>
+</html>
