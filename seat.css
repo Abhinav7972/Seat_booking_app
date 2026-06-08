@@ -20,8 +20,34 @@ body
     font-family: sans-serif;
 }
 
+.seat-l
+{
+   height: 25px;
+    width: 30px;
+    border: 1px solid #bdbdbd;
+    border-radius: 2px 2px 4px 4px;
+    margin: 10px;
+    margin-bottom: 0.8rem;
+    position: relative;
+    cursor: pointer;
+    background-color: #fff;
+    transition: 0.3s ease background-color;
+}
 
-
+.seat-l::after
+{
+    content: "";
+    height: 23px;
+    width: 20px;
+    border: 1px solid #bdbdbd;
+    position: absolute;
+    left: 50%;
+    top: 29%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 2px 2px;
+    transition: 0.3s ease background-color;
+}
 
 .seat
 {
@@ -62,6 +88,34 @@ body
 {
     background-color: #e0d9d9;
 }
+
+
+
+.selected-legend
+{
+    background-color: green;
+}
+
+
+.occupied-legend
+{
+  background-color: gray;
+}
+
+
+
+.selected-legend::after
+{
+    background-color: green;
+}
+
+
+.occupied-legend::after
+{
+  background-color: gray;
+}
+
+
 
 
 
@@ -181,7 +235,7 @@ body
     background-color: rgb(90, 87, 87);
     color:  rgb(194, 187, 187);
     padding: 5px;
-    margin: 0 auto;
+    margin: 9px auto;
     border-radius: 10px;
     width:  50%;
 }
