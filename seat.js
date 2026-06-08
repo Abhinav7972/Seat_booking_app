@@ -4,6 +4,8 @@
         { name: 'ironman', price: 30 }
 ];
     
+    const selectseatarr = [];
+
 
 const movieselect = document.getElementById('movie')
 
@@ -52,7 +54,6 @@ function getseat()
 {
     const seat = document.querySelectorAll('.seat');
     const seatnumbercont = document.querySelector('.selected-seats')
-    const selectseatarr = [];
     seat.forEach((s,index) => {
         s.addEventListener('click', () => {
             if (s.classList.contains('occupied')) { return; }
