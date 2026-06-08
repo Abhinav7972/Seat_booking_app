@@ -255,6 +255,20 @@ gap: 10px;
 }
 
 
+.movie-type select option[selected]
+{
+    background-color: rgb(207, 200, 200);
+}
+
+
+
+
+
+
+
+
+
+
 
 .seat-price
 {
