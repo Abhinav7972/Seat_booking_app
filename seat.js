@@ -29,6 +29,8 @@ function getmoviename()
     movieselect.addEventListener('change', () => {
       moviename.innerHTML = movieselect.value     
     })
+
+  
     
     
 }
@@ -36,7 +38,9 @@ function getmoviename()
 
 function getPrice() {
     const movieprice = document.getElementById('price');
-    
+     
+    const sseat = selectseatarr.length;
+
 
     movieselect.addEventListener('change', () => {
         moviearray.forEach((movie) => {
@@ -44,9 +48,9 @@ function getPrice() {
                 movieprice.innerHTML = `$${movie.price}`;
             }
         })
-    
     })
-        
+    
+ console.log(sseat)
 }
 
 
@@ -77,7 +81,6 @@ function getseat()
                     if (el.innerHTML == (index + 1)) seatnumbercont.removeChild(el);
                 });
             }
-            console.log(selectseatarr);
         })
 
         continuebtn.addEventListener('click', () => { 
@@ -89,10 +92,18 @@ function getseat()
                     selectedSeatElements.forEach(el => {
                         if (el.innerHTML == (index + 1)) seatnumbercont.removeChild(el);
                     });
-            }    
+
+                    selectseatarr.length = 0;
+                    const seatprice = document.getElementById('seat-price');
+                    seatprice.innerHTML = `$0`;
+            }
+
+            
+
         })
         
         cancelbtn.addEventListener('click', () => { 
+
             if (s.classList.contains('selected'))
             {
                 s.classList.remove('selected');
@@ -110,6 +121,23 @@ function getseat()
 
 
 
+function updatesummary()
+{
+    const movieprice = document.getElementById('price');
+    const seatprice = document.getElementById('seat-price');
+    const sseat = selectseatarr.length;
+    const totalseat = document.getElementById('seat-number')
+     
+    const update = () => {
+        const selectedMovie = moviearray.find(m => m.name === movieselect.value);
+        if (selectedMovie) {
+            seatprice.innerHTML = `$${selectedMovie.price * selectseatarr.length}`;
+            totalseat.innerHTML = `${selectseatarr.length}`;
+        }
+    };
+    movieselect.addEventListener('change', update);
+    document.addEventListener('click', update);
+}
 
 
 
@@ -118,4 +146,5 @@ function getseat()
 
 getmoviename()
 getPrice()
+updatesummary()
 getseat()
