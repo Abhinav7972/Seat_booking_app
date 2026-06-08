@@ -52,13 +52,31 @@ function getseat()
 {
     const seat = document.querySelectorAll('.seat');
     const seatnumbercont = document.querySelector('.selected-seats')
+    const selectseatarr = [];
     seat.forEach((s,index) => {
         s.addEventListener('click', () => {
+            if (s.classList.contains('occupied')) { return; }
+
+          
             s.classList.toggle('selected');
             const seatnumber = document.createElement('p');
             seatnumber.classList.add('selected-seat');
             seatnumber.innerHTML = index + 1;
+            if (s.classList.contains('selected') ==  true)
+            {
+                selectseatarr.push(index + 1);
             seatnumbercont.appendChild(seatnumber);
+
+            }
+            else
+            {
+                selectseatarr.splice(selectseatarr.indexOf(index + 1), 1);
+                const existingSeats = seatnumbercont.querySelectorAll('.selected-seat');
+                existingSeats.forEach(el => {
+                    if (el.innerHTML == (index + 1)) seatnumbercont.removeChild(el);
+                });
+            }
+            console.log(selectseatarr);
         })
 
         continuebtn.addEventListener('click', () => { 
@@ -66,10 +84,26 @@ function getseat()
                 {
                     s.classList.remove('selected');
                     s.classList.add('occupied');
-                    seatnumbercont.removeChild(seatnumber);
-                }
-                    
-            })
+                    const selectedSeatElements = seatnumbercont.querySelectorAll('.selected-seat');
+                    selectedSeatElements.forEach(el => {
+                        if (el.innerHTML == (index + 1)) seatnumbercont.removeChild(el);
+                    });
+            }    
+        })
+        
+        cancelbtn.addEventListener('click', () => { 
+            if (s.classList.contains('selected'))
+            {
+                s.classList.remove('selected');
+                const selectedSeatElements = seatnumbercont.querySelectorAll('.selected-seat');
+                selectedSeatElements.forEach(el => {
+                    if (el.innerHTML == (index + 1)) {
+                        seatnumbercont.removeChild(el);
+                    }
+                   
+                });
+            }
+        })
     })
 }
 
