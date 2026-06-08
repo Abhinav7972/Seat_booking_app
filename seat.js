@@ -7,7 +7,7 @@
     const selectseatarr = [];
 
 
-const movieselect = document.getElementById('movie')
+const movieselect = document.getElementById('movie') 
 
 const continuebtn = document.getElementById('continue')
 const cancelbtn = document.getElementById('cancel')
@@ -27,7 +27,7 @@ function getmoviename()
     )
 
     movieselect.addEventListener('change', () => {
-      moviename.innerHTML = movieselect.value     
+        moviename.innerHTML = movieselect.value;
     })
 
   
